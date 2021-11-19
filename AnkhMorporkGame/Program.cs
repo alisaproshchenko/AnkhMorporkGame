@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Entities.Assassins;
 
 namespace AnkhMorporkGame
 {
@@ -6,7 +7,10 @@ namespace AnkhMorporkGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var service = new AssassinsService();
+            Console.WriteLine(service.Output());
+
+            Console.ReadKey();
         }
     }
 }
