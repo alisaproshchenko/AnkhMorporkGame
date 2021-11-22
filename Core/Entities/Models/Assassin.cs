@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Entities.Assassins
+namespace Core.Entities.Models
 {
     public class Assassin
     {

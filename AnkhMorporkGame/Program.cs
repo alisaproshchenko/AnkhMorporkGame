@@ -1,14 +1,23 @@
 ﻿using System;
-using Core.Entities.Assassins;
+using Core.Services;
 
 namespace AnkhMorporkGame
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var service = new AssassinsService();
-            Console.WriteLine(service.Output());
+            var assassins = new AssassinsService();
+            Console.WriteLine(assassins.Output());
+
+            var thieves = new ThievesGuildService();
+            Console.WriteLine(thieves.Output());
+
+            var beggars = new BeggarsService();
+            Console.WriteLine(beggars.Output());
+
+            var fools = new FoolsService();
+            Console.WriteLine(fools.Output());
 
             Console.ReadKey();
         }
