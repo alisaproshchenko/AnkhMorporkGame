@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Entities.Models
 {
-    public class Fool
+    public class Fool : NPC
     {
         public int Id;
         public string Name;

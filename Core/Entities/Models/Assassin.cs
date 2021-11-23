@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Entities.Models
 {
-    public class Assassin
+    public class Assassin : NPC
     {
         public int Id;
         public bool Busy;

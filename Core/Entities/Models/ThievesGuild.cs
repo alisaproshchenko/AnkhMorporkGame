@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Entities.Models
 {
-    public class ThievesGuild
+    public class ThievesGuild : NPC
     {
         public int Thefts;
         public int Fee;

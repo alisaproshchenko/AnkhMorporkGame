@@ -16,5 +16,10 @@ namespace Core.Player
             Money = 100.0;
             Dead = false;
         }
+
+        public override string ToString()
+        {
+            return $"{Name}, you currently have {Money}$ on your budget!";
+        }
     }
 }
