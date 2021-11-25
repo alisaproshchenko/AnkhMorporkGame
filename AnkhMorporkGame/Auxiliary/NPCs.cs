@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Auxiliary
+namespace AnkhMorporkGame.Auxiliary
 {
     public enum NPCs
     {

@@ -14,8 +14,6 @@ namespace Core.Services
         {
             Assassins = GetAll();
         }
-
-
         public List<Assassin> GetAll()
         {
             if (Assassins != null) 
@@ -44,6 +42,11 @@ namespace Core.Services
             }
 
             return sb.ToString();
+        }
+
+        public Assassin Get(int i)
+        {
+            return Assassins.Find(x => x.RewardRange.Item1 <= i && x.RewardRange.Item2 >= i && !x.Busy);
         }
     }
 }

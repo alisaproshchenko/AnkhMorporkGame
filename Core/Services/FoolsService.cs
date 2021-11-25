@@ -42,5 +42,10 @@ namespace Core.Services
 
             return sb.ToString();
         }
+
+        public Fool Get(int i)
+        {
+            return Fools.ElementAt(i);
+        }
     }
 }

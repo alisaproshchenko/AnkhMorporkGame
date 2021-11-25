@@ -15,6 +15,8 @@ namespace Core.Entities.Models
             Id = id;
             Name = name;
             Fee = fee;
+            _message = "What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job." +
+                       $" What about trying yourself as a {name} and earn {Fee}$?";
         }
     }
 }

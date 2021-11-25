@@ -42,5 +42,10 @@ namespace Core.Services
 
             return sb.ToString();
         }
+
+        public Beggar Get(int i)
+        {
+            return Beggars.ElementAt(i);
+        }
     }
 }

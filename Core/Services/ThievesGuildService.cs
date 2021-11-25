@@ -41,5 +41,10 @@ namespace Core.Services
 
             return sb.ToString();
         }
+
+        public ThievesGuild Get(int i)
+        {
+            return ThievesGuilds.ElementAt(i);
+        }
     }
 }

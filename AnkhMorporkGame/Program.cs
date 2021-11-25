@@ -1,7 +1,8 @@
 ﻿using System;
-using Core.Auxiliary;
+using AnkhMorporkGame.Auxiliary;
+using Core;
+using Core.Entities.Models;
 using Core.Player;
-using Core.Services;
 
 namespace AnkhMorporkGame
 {
@@ -53,18 +54,61 @@ namespace AnkhMorporkGame
 
         private static void Run()
         {
+            var uow = new UnitOfWork();
             var events = new EventsGenerator();
-            var repetitions = 0;
-            while (!_player.Dead)
+            while (!_player.IsDead)     // while player is alive
             {
                 Console.WriteLine(_player);
 
+                var nextEvent = events.GenerateEvent(); // choosing a next character to meet
+
+                NPC npc = nextEvent switch 
+                {
+                    NPCs.ThievesGuild => uow.ThievesGuildService.Get(0) //hardcoded
+                    ,
+                    NPCs.Beggar => uow.BeggarsService.Get(EventsGenerator.GenerateIndex(uow.BeggarsService.GetAll())),
+                    NPCs.Fool => uow.FoolsService.Get(EventsGenerator.GenerateIndex(uow.FoolsService.GetAll())),
+                    NPCs.Assassin => uow.AssassinsService.Get(0) //hardcoded
+                    ,
+                    _ => uow.AssassinsService.Get(0) // default case is never going to happen
+                };
+
+                npc.Say(_player);
+
+                if (Selection()) // two options for user // playing
+                {
+                    if (npc is Assassin)
+                    {
+                        Console.WriteLine("Enter how much you are able to pay: (usually between 5$ and 35$)");
+                        var payment = Convert.ToInt32(Console.ReadLine());
+                        npc = uow.AssassinsService.Get(payment);
+
+                    }
+
+                    npc.Play(_player);
+                }
+                else // skipping
+                {
+                    if(npc is Fool)            //skipping only
+                        continue;
+
+                    npc.Kill(_player);         //losing the game
+                    break;
+                }
                 
-                var nextEvent = events.GenerateEvent();
-                //events.RecalculateProbabilities(nextEvent, null, repetitions);
-
-
             }
+        }
+
+        private static bool Selection()
+        {
+            Console.WriteLine("What will you do:\n --- 1. Play\n --- 2. Skip");
+            char key;
+            do
+            {
+                key = Console.ReadKey().KeyChar;
+            } while (key != '1' && key != '2');
+
+            return key == '1';
         }
     }
 }

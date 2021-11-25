@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Core.Entities.Models;
 using System.Linq;
+using Core;
+using Core.Services;
 
-namespace Core.Auxiliary
+namespace AnkhMorporkGame.Auxiliary 
 {
     public class EventsGenerator
     {
         private readonly Dictionary<NPCs, double> _variety = new Dictionary<NPCs, double>();
-        private readonly Random _random = new Random();
-
+        private static readonly Random Random = new Random();
 
         public EventsGenerator()
         {
@@ -22,7 +23,7 @@ namespace Core.Auxiliary
 
         public NPCs GenerateEvent() //choosing a next character to meet
         {
-            var key = _random.NextDouble();
+            var key = Random.NextDouble();
             var intervalEnds = 0.0;
 
             for (var i = 0; i < _variety.Count; i++)
@@ -60,6 +61,11 @@ namespace Core.Auxiliary
                 else
                     _variety[(NPCs)i] += (0.1 * repetitions);
             }
+        }
+
+        public static int GenerateIndex(IEnumerable<NPC> entities)
+        {
+            return Random.Next(0, entities.Count());
         }
     }
 }

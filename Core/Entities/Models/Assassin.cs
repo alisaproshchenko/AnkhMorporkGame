@@ -15,6 +15,8 @@ namespace Core.Entities.Models
             Id = id;
             Busy = busy;
             RewardRange = rewardRange;
+            _message = "Oh! It seems like someone wants to kill you! I think you should make a contract with " +
+                       "The Assassins Guild to help you";
         }
     }
 }

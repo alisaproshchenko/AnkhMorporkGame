@@ -15,6 +15,7 @@ namespace Core.Entities.Models
             Id = id;
             Name = name;
             Fee = fee;
+            _message = $"Hello there! - you`re hearing from a suspicious guy '{Name}'. He wants {Fee}$ from you.";
         }
     }
 }

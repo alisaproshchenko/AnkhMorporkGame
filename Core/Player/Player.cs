@@ -7,19 +7,35 @@ namespace Core.Player
     public class Player
     {
         public string Name { get; }
-        public double Money { get; }
-        public bool Dead { get; }
+        private double _money;
+
+        public bool IsDead { get; private set; }
 
         public Player(string name)
         {
             Name = name;
-            Money = 100.0;
-            Dead = false;
+            _money = 100.0;
+            IsDead = false;
         }
 
         public override string ToString()
         {
-            return $"{Name}, you currently have {Money}$ on your budget!";
+            return $"{Name}, you currently have {_money}$ on your budget!";
+        }
+
+        public void GainMoney(double income)
+        {
+            _money += income;
+        }
+
+        public void SpendMoney(double expenditure)
+        {
+            _money -= expenditure;
+        }
+
+        public void Die()
+        {
+            IsDead = true;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Core.Entities.Models
         {
             Thefts = thefts;
             Fee = fee;
+            _message = $"Oh no! There`s a guy from the Guild og Thieves. You have to pay {Fee}$ to them";
         }
     }
 }
