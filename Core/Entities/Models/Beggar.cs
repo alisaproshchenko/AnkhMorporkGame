@@ -15,7 +15,15 @@ namespace Core.Entities.Models
             Id = id;
             Name = name;
             Fee = fee;
-            _message = $"Hello there! - you`re hearing from a suspicious guy '{Name}'. He wants {Fee}$ from you.";
+            _welcomingMessage = $"- Hello there! - you`re hearing from a suspicious guy '{Name}'. He wants {Fee}$ from you.";
+            _killingMessage = "You`d better have found any money for that beggar! After several hours of being chased by him, you DIED";
+            _playingMessage = "- Oh THANK YOU Sooooooooo much my dear friend!";
+        }
+
+        public override string Play(Player.Player player)
+        {
+            player.SpendMoney(Fee);
+            return _playingMessage;
         }
     }
 }

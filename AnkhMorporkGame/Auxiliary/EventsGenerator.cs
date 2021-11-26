@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using Core.Entities.Models;
@@ -11,18 +12,22 @@ namespace AnkhMorporkGame.Auxiliary
     public class EventsGenerator
     {
         private readonly Dictionary<NPCs, double> _variety = new Dictionary<NPCs, double>();
+        private double _probability;
         private static readonly Random Random = new Random();
 
         public EventsGenerator()
         {
-            _variety.Add(NPCs.Assassin, 0.25);
-            _variety.Add(NPCs.ThievesGuild, 0.25);
-            _variety.Add(NPCs.Beggar, 0.25);
-            _variety.Add(NPCs.Fool, 0.25);
+            _probability = 1.0 / Enum.GetNames(typeof(NPCs)).Length;
+
+            _variety.Add(NPCs.Assassin, _probability);
+            _variety.Add(NPCs.ThievesGuild, _probability);
+            _variety.Add(NPCs.Beggar, _probability);
+            _variety.Add(NPCs.Fool, _probability);
         }
 
         public NPCs GenerateEvent() //choosing a next character to meet
         {
+
             var key = Random.NextDouble();
             var intervalEnds = 0.0;
 
@@ -37,7 +42,7 @@ namespace AnkhMorporkGame.Auxiliary
             return NPCs.Assassin; //bruh moment
         }
 
-        public void RecalculateProbabilities(NPCs current, NPCs previous, int repetitions)
+        public void RecalculateProbabilities(NPCs current, NPCs previous, int repetitions) ///////////////////////////////////////////////////////////
         {
             if (current != previous) 
                 ResumeProbabilities();
@@ -49,9 +54,10 @@ namespace AnkhMorporkGame.Auxiliary
         {
             for (var i = 0; i < _variety.Count; i++)
             {
-                _variety[(NPCs) i] = 0.25;
+                _variety[(NPCs) i] = _probability;
             }
-        }
+        }                                                                                   ///////////////////////////////////////////////////////////
+
         private void ResumeProbabilities(int repetitions, NPCs current)
         {
             for (var i = 0; i < _variety.Count; i++)

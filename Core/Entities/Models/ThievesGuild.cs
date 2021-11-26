@@ -6,14 +6,24 @@ namespace Core.Entities.Models
 {
     public class ThievesGuild : NPC
     {
-        public int Thefts;
+        private int _thefts;
+        public static int Thefts { get; }
         public int Fee;
 
         public ThievesGuild(int thefts, int fee)
         {
-            Thefts = thefts;
+            _thefts = thefts;
             Fee = fee;
-            _message = $"Oh no! There`s a guy from the Guild og Thieves. You have to pay {Fee}$ to them";
+            _welcomingMessage = $"Oh no! There`s a guy from the Guild og Thieves. You have to pay {Fee}$ to them";
+            _killingMessage = "You definitely had to bring them those 10$..... Because the Game IS OVER for you by now";
+            _playingMessage = "- Have a nice evening!";
+        }
+
+        public override string Play(Player.Player player)
+        {
+            player.SpendMoney(Fee);
+            _thefts--;
+            return _playingMessage;
         }
     }
 }

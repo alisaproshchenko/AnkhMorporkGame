@@ -6,21 +6,21 @@ namespace Core.Entities.Models
 {
     public abstract class NPC
     {
-        protected string _message;
+        protected string _welcomingMessage;
+        protected string _killingMessage;
+        protected string _playingMessage;
 
-        public virtual string Say(Player.Player player)
+        public string Say(Player.Player player)
         {
-            return _message;
+            return _welcomingMessage;
         }
 
-        public virtual void Play(Player.Player player)
-        {
-            
-        }
+        public abstract string Play(Player.Player player);
 
-        public virtual void Kill(Player.Player player)
+        public virtual string Kill(Player.Player player)
         {
             player.Die();
+            return _killingMessage;
         }
     }
 }

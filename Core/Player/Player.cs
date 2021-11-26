@@ -20,7 +20,7 @@ namespace Core.Player
 
         public override string ToString()
         {
-            return $"{Name}, you currently have {_money}$ on your budget!";
+            return $"{Name}, you currently have {_money}$ on your budget!\n";
         }
 
         public void GainMoney(double income)
