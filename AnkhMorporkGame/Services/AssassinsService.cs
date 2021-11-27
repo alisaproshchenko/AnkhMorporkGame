@@ -48,5 +48,10 @@ namespace AnkhMorporkGame.Services
         {
             return Assassins.Find(x => x.RewardRange.Item1 <= i && x.RewardRange.Item2 >= i && !x.Busy);
         }
+
+        public int GetMinReward()
+        {
+            return Assassins.FindAll(x => !x.Busy).Select(x => x.RewardRange.Item1).Min();
+        }
     }
 }

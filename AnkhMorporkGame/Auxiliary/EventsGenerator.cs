@@ -1,69 +1,69 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Text;
 using AnkhMorporkGame.Entities.Models;
 using System.Linq;
-using AnkhMorporkGame;
-using AnkhMorporkGame.Services;
 
 namespace AnkhMorporkGame.Auxiliary 
 {
     public class EventsGenerator
     {
         private readonly Dictionary<NPCs, double> _variety = new Dictionary<NPCs, double>();
-        private double _probability;
+        private readonly double _probability;
+        private readonly double _part;
         private static readonly Random Random = new Random();
 
         public EventsGenerator()
         {
             _probability = 1.0 / Enum.GetNames(typeof(NPCs)).Length;
-
             _variety.Add(NPCs.Assassin, _probability);
             _variety.Add(NPCs.ThievesGuild, _probability);
             _variety.Add(NPCs.Beggar, _probability);
             _variety.Add(NPCs.Fool, _probability);
+            _part = 0.1 * (_variety.Count - 1);
         }
 
         public NPCs GenerateEvent() //choosing a next character to meet
         {
-
             var key = Random.NextDouble();
             var intervalEnds = 0.0;
+            var chosen = NPCs.Assassin;
 
             for (var i = 0; i < _variety.Count; i++)
             {
-                
                 intervalEnds += _variety[(NPCs)i];
-                if (!(key <= intervalEnds)) continue;
+                if (key > intervalEnds) continue;
 
-                return (NPCs) i;
+                chosen = (NPCs) i;
+                break;
             }
-            return NPCs.Assassin; //bruh moment
+
+            return chosen;
         }
 
-        public void RecalculateProbabilities(NPCs current, NPCs previous, int repetitions) ///////////////////////////////////////////////////////////
+        public void RecalculateProbabilities(NPC current, NPC previous, ref int repetitions) ///////////////////////////////////////////////////////////
         {
             if (current != previous) 
-                ResumeProbabilities();
+                ResumeProbabilities(ref repetitions);
             else
                 ResumeProbabilities(++repetitions, current);
         }
 
-        private void ResumeProbabilities()
+        private void ResumeProbabilities(ref int repetitions)
         {
             for (var i = 0; i < _variety.Count; i++)
             {
                 _variety[(NPCs) i] = _probability;
             }
+
+            repetitions = 0;
         }                                                                                   ///////////////////////////////////////////////////////////
 
-        private void ResumeProbabilities(int repetitions, NPCs current)
+        private void ResumeProbabilities(int repetitions, NPC current)
         {
             for (var i = 0; i < _variety.Count; i++)
             {
-                if((NPCs)i == current)
-                    _variety[(NPCs)i] -= (0.3 * repetitions);
+                if(current.GetType().ToString().EndsWith(((NPCs)i).ToString()))
+                    _variety[(NPCs)i] -= (_part * repetitions);
                 else
                     _variety[(NPCs)i] += (0.1 * repetitions);
             }

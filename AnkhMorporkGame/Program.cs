@@ -1,15 +1,9 @@
 ﻿using System;
-using AnkhMorporkGame.Auxiliary;
-using AnkhMorporkGame;
-using AnkhMorporkGame.Entities.Models;
-using AnkhMorporkGame.Player;
 
 namespace AnkhMorporkGame
 {
     class Program
     {
-        //private static Player _player;
-
         private static void Main()
         {
             try
@@ -19,6 +13,7 @@ namespace AnkhMorporkGame
                 var playerName = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(playerName)) throw new Exception("The player`s name is invalid");
 
+                Console.WriteLine($"Hello, {playerName}!");
                 var player = new Player.Player(playerName);
                 var game = new Game(player);
                 game.Run();

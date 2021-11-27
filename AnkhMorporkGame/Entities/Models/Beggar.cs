@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AnkhMorporkGame.Entities.Models
+﻿namespace AnkhMorporkGame.Entities.Models
 {
     public class Beggar : NPC
     {
@@ -15,15 +11,27 @@ namespace AnkhMorporkGame.Entities.Models
             Id = id;
             Name = name;
             Fee = fee;
-            _welcomingMessage = $"- Hello there! - you`re hearing from a suspicious guy '{Name}'. He wants {Fee}$ from you.";
-            _killingMessage = "You`d better have found any money for that beggar! After several hours of being chased by him, you DIED";
-            _playingMessage = "- Oh THANK YOU Sooooooooo much my dear friend!";
+            WelcomingMessage = $"- Hello there! - you`re hearing from a suspicious guy '{Name}'. He wants {Fee}$ from you.";
+            KillingMessage = "\nYou`d better found any money for that beggar! After several hours of being chased by him, you DIED";
+            PlayingMessage = "\n- Oh THANK YOU Sooooooooo much my dear friend!";
         }
 
         public override string Play(Player.Player player)
         {
+            if (Fee > player.Money) // if player is out of money
+                return "\n!!! - You are OUT OF MONEY" + Kill(player);
+
             player.SpendMoney(Fee);
-            return _playingMessage;
+            return PlayingMessage;
+        }
+
+        public override string Kill(Player.Player player)
+        {
+            if (Fee != 0) return base.Kill(player);
+
+            player.Die();
+            return "\nYou`d better given that BOTTLE OF BEER for that beggar! After several hours of being chased by him, you actually DIED";
+
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AnkhMorporkGame.Services;
+﻿using AnkhMorporkGame.Services;
 
 namespace AnkhMorporkGame
 {

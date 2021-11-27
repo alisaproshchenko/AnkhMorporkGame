@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AnkhMorporkGame.Entities.Models
+﻿namespace AnkhMorporkGame.Entities.Models
 {
     public abstract class NPC
     {
-        protected string _welcomingMessage;
-        protected string _killingMessage;
-        protected string _playingMessage;
+        protected string WelcomingMessage;
+        protected string KillingMessage;
+        protected string PlayingMessage;
 
         public string Say(Player.Player player)
         {
-            return _welcomingMessage;
+            return WelcomingMessage;
         }
 
         public abstract string Play(Player.Player player);
@@ -20,7 +16,7 @@ namespace AnkhMorporkGame.Entities.Models
         public virtual string Kill(Player.Player player)
         {
             player.Die();
-            return _killingMessage;
+            return KillingMessage;
         }
     }
 }
