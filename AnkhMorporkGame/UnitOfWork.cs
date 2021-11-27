@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Core.Services;
+using AnkhMorporkGame.Services;
 
-namespace Core
+namespace AnkhMorporkGame
 {
     public class UnitOfWork
     {

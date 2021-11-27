@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Entities.Models
+namespace AnkhMorporkGame.Entities.Models
 {
     public class Assassin : NPC
     {

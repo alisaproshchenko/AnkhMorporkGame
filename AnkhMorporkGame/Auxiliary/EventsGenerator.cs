@@ -2,10 +2,10 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
-using Core.Entities.Models;
+using AnkhMorporkGame.Entities.Models;
 using System.Linq;
-using Core;
-using Core.Services;
+using AnkhMorporkGame;
+using AnkhMorporkGame.Services;
 
 namespace AnkhMorporkGame.Auxiliary 
 {

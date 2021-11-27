@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Player
+namespace AnkhMorporkGame.Player
 {
     public class Player
     {

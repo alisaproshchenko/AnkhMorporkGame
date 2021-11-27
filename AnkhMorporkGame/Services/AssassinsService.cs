@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Core.Entities.Models;
+using AnkhMorporkGame.Entities.Models;
 
-namespace Core.Services
+namespace AnkhMorporkGame.Services
 {
     public class AssassinsService : IService<Assassin>
     {

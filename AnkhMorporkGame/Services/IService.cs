@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Services
+namespace AnkhMorporkGame.Services
 {
     public interface IService<T>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using AnkhMorporkGame.Auxiliary;
-using Core;
-using Core.Entities.Models;
-using Core.Player;
+using AnkhMorporkGame;
+using AnkhMorporkGame.Entities.Models;
+using AnkhMorporkGame.Player;
 
 namespace AnkhMorporkGame
 {
@@ -19,7 +19,7 @@ namespace AnkhMorporkGame
                 var playerName = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(playerName)) throw new Exception("The player`s name is invalid");
 
-                var player = new Player(playerName);
+                var player = new Player.Player(playerName);
                 var game = new Game(player);
                 game.Run();
                 Console.WriteLine("\n- - - \tThe game is over! I hope you enjoyed the time you spent here :)");

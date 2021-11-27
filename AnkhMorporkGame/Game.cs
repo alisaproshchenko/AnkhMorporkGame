@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using AnkhMorporkGame.Auxiliary;
-using Core;
-using Core.Entities.Models;
-using Core.Player;
+using AnkhMorporkGame;
+using AnkhMorporkGame.Entities.Models;
+using AnkhMorporkGame.Player;
 
 namespace AnkhMorporkGame
 {
     public class Game
     {
-        private readonly Player _player;
+        private readonly Player.Player _player;
 
-        public Game(Player player)
+        public Game(Player.Player player)
         {
             _player = player;
         }

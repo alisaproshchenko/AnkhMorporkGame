@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Core.Entities.Models;
+using AnkhMorporkGame.Entities.Models;
 
-namespace Core.Services
+namespace AnkhMorporkGame.Services
 {
     public class ThievesGuildService : IService<ThievesGuild>
     {
@@ -36,7 +36,7 @@ namespace Core.Services
             var sb = new StringBuilder();
             foreach (var thieves in ThievesGuilds)
             {
-                sb.Append($"Thieves guild: Acceptable number of thefts: {thieves.Thefts}, Fee: {thieves.Fee}\n");
+                sb.Append($"Thieves guild: Acceptable number of thefts: {ThievesGuild.Thefts}, Fee: {thieves.Fee}\n");
             }
 
             return sb.ToString();
