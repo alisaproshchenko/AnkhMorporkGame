@@ -9,7 +9,11 @@ namespace Core.Entities.Models
         public int Id;
         public bool Busy;
         public (int, int) RewardRange;
-        public int CurrentPayment { set; get; }
+
+        public delegate (NPC, int) AssassinsPaymentGetter(UnitOfWork uow);
+
+        public AssassinsPaymentGetter ActualPaymentGetter;
+        public UnitOfWork Uow;
 
         public Assassin(int id, bool busy, (int, int) rewardRange)
         {
@@ -24,9 +28,14 @@ namespace Core.Entities.Models
 
         public override string Play(Player.Player player)
         {
-            player.SpendMoney(CurrentPayment);
+            var (foundAssassin, actualPayment) = ActualPaymentGetter(Uow);
+
+            if (foundAssassin == null)     // if player cannot actually pay for assassin or all of them are busy
+                return Kill(player);
+            
+            player.SpendMoney(actualPayment);
             return _playingMessage;
         }
-
+        
     }
 }

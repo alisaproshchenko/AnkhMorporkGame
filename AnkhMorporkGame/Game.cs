@@ -42,19 +42,6 @@ namespace AnkhMorporkGame
 
                 if (Selection())        // two options for user // playing
                 {
-                    if (npc is Assassin)
-                    {
-                        var (foundAssassin, actualPayment) = AssassinsPaymentGetter(uow);
-
-                        if (foundAssassin == null)     // if player cannot actually pay for assassin or all of them are busy
-                        {
-                            Console.WriteLine(npc.Kill(_player));
-                            break;
-                        }
-
-                        ((Assassin) foundAssassin).CurrentPayment = actualPayment;
-                    }
-
                     Console.WriteLine(npc.Play(_player));
                 }
                 else          // skipping // losing the game // if npc is NOT a fool
@@ -66,21 +53,20 @@ namespace AnkhMorporkGame
                 // recalculation of probabilities should be HERE
             }
         }
-
-        private static (NPC, int) AssassinsPaymentGetter(UnitOfWork uow)
+        private (NPC, int) AssassinsPaymentGetter(UnitOfWork uow)
         {
             var trying = 0;
             const int times = 3;
             var payment = -1;
             NPC found = null;
-            
+
             while (trying++ < times)
             {
                 Console.WriteLine("Enter how much you are able to pay:   (usually between 5$ and 35$)");
                 payment = Convert.ToInt32(Console.ReadLine());
                 found = uow.AssassinsService.Get(payment);
 
-                if(found != null) break;
+                if (found != null) break;
             }
 
             return (found, payment);
