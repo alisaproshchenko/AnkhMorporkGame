@@ -21,7 +21,7 @@ namespace AnkhMorporkGame
             DisplayRules();
 
             NPC previous = null;
-            var repetitions = 0;
+            var repetitions = 1;
             while (!_player.IsDead)     
             {
                 Console.Clear();
