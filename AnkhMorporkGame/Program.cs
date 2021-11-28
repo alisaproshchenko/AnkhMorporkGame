@@ -17,6 +17,7 @@ namespace AnkhMorporkGame
                 var player = new Player.Player(playerName);
                 var game = new Game(player);
                 game.Run();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n- - - \tThe game is over! I hope you enjoyed the time you spent here :)");
 
             }

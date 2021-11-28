@@ -9,7 +9,7 @@
         {
             Thefts = thefts;
             Fee = fee;
-            WelcomingMessage = $"Oh no! There`s a guy from the Guild og Thieves. You have to pay {Fee}$ to them";
+            WelcomingMessage = $"Oh no! There`s a guy from the Guild of Thieves. You have to pay {Fee}$ to them";
             KillingMessage = "\nYou definitely had to bring them those 10$..... Because the Game IS OVER for you by now";
             PlayingMessage = "\n- Have a nice evening!";
         }

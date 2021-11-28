@@ -36,17 +36,26 @@ namespace AnkhMorporkGame.Entities.Models
         {
             var trying = 0;
             const int times = 3;
-            var payment = -1;
+            var payment = default(int);
             NPC found = null;
 
             while (trying++ < times)
             {
                 Console.WriteLine($"\nEnter how much you are able to pay:   (usually between 5$ and 35$) //{times - trying + 1} tries left//");
-                payment = Convert.ToInt32(Console.ReadLine());
+
+                if (!int.TryParse(Console.ReadLine(), out payment))
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\nYou should enter the integer value");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    continue;
+                }
 
                 if (payment < 1 || payment > player.Money)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("\nInvalid input sum (out of the amount of your pocket)");
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     continue;
                 }
 
