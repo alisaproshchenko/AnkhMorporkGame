@@ -44,7 +44,7 @@ namespace AnkhMorporkGame.Auxiliary
             return chosen;
         }
 
-        public void RecalculateProbabilities(NPC current, NPC previous, ref int repetitions) ///////////////////////////////////////////////////////////
+        public void RecalculateProbabilities(NPC current, NPC previous, ref int repetitions) 
         {
             if (previous != null && current.GetType() == previous.GetType()) 
                 ResumeProbabilities(repetitions++, current);
@@ -60,7 +60,7 @@ namespace AnkhMorporkGame.Auxiliary
             }
 
             repetitions = 1;
-        }                                                                                   ///////////////////////////////////////////////////////////
+        }                                                                                  
 
         private void ResumeProbabilities(int repetitions, NPC current)
         {
