@@ -3,3 +3,6 @@ Core/bin/
 Core/obj/
 AnkhMorporkGame/bin/
 AnkhMorporkGame/obj/
+TestResults/
+AnkhMorporkGame.NUnitTests/bin
+AnkhMorporkGame.NUnitTests/obj

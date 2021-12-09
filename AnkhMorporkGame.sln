@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnkhMorporkGame", "AnkhMorporkGame\AnkhMorporkGame.csproj", "{FB4857B1-349F-4311-BD1F-D74425399CAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnkhMorporkGame", "AnkhMorporkGame\AnkhMorporkGame.csproj", "{FB4857B1-349F-4311-BD1F-D74425399CAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{79B82352-A356-436B-A744-93E960E49FA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnkhMorporkGame.NUnitTests", "AnkhMorporkGame.NUnitTests\AnkhMorporkGame.NUnitTests.csproj", "{F9B30E58-512E-467B-8686-522F41414DFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{FB4857B1-349F-4311-BD1F-D74425399CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4857B1-349F-4311-BD1F-D74425399CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4857B1-349F-4311-BD1F-D74425399CAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79B82352-A356-436B-A744-93E960E49FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79B82352-A356-436B-A744-93E960E49FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79B82352-A356-436B-A744-93E960E49FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79B82352-A356-436B-A744-93E960E49FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B30E58-512E-467B-8686-522F41414DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B30E58-512E-467B-8686-522F41414DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B30E58-512E-467B-8686-522F41414DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B30E58-512E-467B-8686-522F41414DFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
