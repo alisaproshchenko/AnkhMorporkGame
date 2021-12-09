@@ -1,4 +1,4 @@
-﻿namespace AnkhMorporkGame.Player
+﻿namespace Core.Player
 {
     public class Player
     {

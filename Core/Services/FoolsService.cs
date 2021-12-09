@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using AnkhMorporkGame.Entities.Models;
+using Core.Entities.Models;
 
-namespace AnkhMorporkGame.Services
+namespace Core.Services
 {
     public class FoolsService : IService<Fool>
     {
@@ -27,7 +27,10 @@ namespace AnkhMorporkGame.Services
                 .Select(fool => new Fool(
                     Convert.ToInt32(fool.Element("Id")?.Value),
                     fool.Element("Name")?.Value,
-                    Convert.ToDouble(fool.Element("Fee")?.Value))));
+                    Convert.ToDouble(fool.Element("Fee")?.Value),
+                    fool.Element("WelcomingMessage")?.Value,
+                    fool.Element("KillingMessage")?.Value,
+                    fool.Element("PlayingMessage")?.Value)));
 
             return list;
         }

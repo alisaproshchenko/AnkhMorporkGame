@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using AnkhMorporkGame.Entities.Models;
+using Core.Entities.Models;
 
-namespace AnkhMorporkGame.Services
+namespace Core.Services
 {
     public class ThievesGuildService : IService<ThievesGuild>
     {
@@ -26,7 +26,10 @@ namespace AnkhMorporkGame.Services
             list.AddRange(xml.Descendants("ThievesGuild")
                 .Select(thieves => new ThievesGuild(
                     Convert.ToInt32(thieves.Element("Thefts")?.Value),
-                    Convert.ToInt32(thieves.Element("Fee")?.Value))));
+                    Convert.ToInt32(thieves.Element("Fee")?.Value),
+                    thieves.Element("WelcomingMessage")?.Value,
+                    thieves.Element("KillingMessage")?.Value,
+                    thieves.Element("PlayingMessage")?.Value)));
 
             return list;
         }

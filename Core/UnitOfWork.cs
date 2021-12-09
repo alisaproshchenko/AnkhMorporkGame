@@ -1,6 +1,6 @@
-﻿using AnkhMorporkGame.Services;
+﻿using Core.Services;
 
-namespace AnkhMorporkGame
+namespace Core
 {
     public class UnitOfWork
     {

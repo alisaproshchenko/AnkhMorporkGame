@@ -1,4 +1,4 @@
-﻿namespace AnkhMorporkGame.Entities.Models
+﻿namespace Core.Entities.Models
 {
     public class Beggar : NPC
     {
@@ -6,14 +6,12 @@
         public string Name;
         public double Fee;
 
-        public Beggar(int id, string name, double fee)
+        public Beggar(int id, string name, double fee, string welcomingMessage, string killingMessage, string playingMessage)
+            : base(welcomingMessage, killingMessage, playingMessage)
         {
             Id = id;
             Name = name;
             Fee = fee;
-            WelcomingMessage = $"- Hello there! - you`re hearing from a suspicious guy '{Name}'. He wants {Fee}$ from you.";
-            KillingMessage = "\nYou`d better found any money for that beggar! After several hours of being chased by him, you DIED";
-            PlayingMessage = "\n- Oh THANK YOU Sooooooooo much my dear friend!";
         }
 
         public override string Play(Player.Player player)

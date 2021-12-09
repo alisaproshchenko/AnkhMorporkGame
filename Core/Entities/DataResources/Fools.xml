@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Fools>
+	<Fool>
+		<Id>1</Id>
+		<Name>Muggin</Name>
+		<Fee>0.5</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Muggin' and earn 50p?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>2</Id>
+		<Name>Gull</Name>
+		<Fee>1</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Gull' and earn 1$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>3</Id>
+		<Name>Dupe</Name>
+		<Fee>2</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Dupe' and earn 2$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>4</Id>
+		<Name>Butt</Name>
+		<Fee>3</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Butt' and earn 3$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>5</Id>
+		<Name>Fool</Name>
+		<Fee>5</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Fool' and earn 5$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>6</Id>
+		<Name>Tomfool</Name>
+		<Fee>6</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Tomfool' and earn 6$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>7</Id>
+		<Name>Stupid Fool</Name>
+		<Fee>7</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Stupid Fool' and earn 7$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>8</Id>
+		<Name>Arch Fool</Name>
+		<Fee>8</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Arch Fool' and earn 8$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+	<Fool>
+		<Id>9</Id>
+		<Name>Complete Fool</Name>
+		<Fee>10</Fee>
+		<WelcomingMessage>What`s the fortune! You met up with an old friend, who is ready to propose a some kind of job. What about trying yourself as a 'Complete Fool' and earn 10$?</WelcomingMessage>
+		<KillingMessage>- Okay, as you wish.... Hope we`ll meet later more!</KillingMessage>
+		<PlayingMessage>- That`s a really nice idea, moreover, these money will be useful for you!</PlayingMessage>
+	</Fool>
+</Fools>

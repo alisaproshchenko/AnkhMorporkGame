@@ -1,18 +1,21 @@
 ﻿using System;
 using AnkhMorporkGame.Auxiliary;
-using AnkhMorporkGame.Entities.Models;
+using Core;
+using Core.Entities.Models;
+using Core.Player;
 
 namespace AnkhMorporkGame
 {
     public class Game
     {
-        private readonly Player.Player _player;
+        private readonly Player _player;
         private readonly UnitOfWork _uow;
         private readonly EventsGenerator _events;
-        public Game(Player.Player player)
+        public Game(Player player)
         {
             _player = player;
             _uow = new UnitOfWork();
+            _uow.AssassinsService.GetPayment = AssassinsPaymentGetter;
             _events = new EventsGenerator();
             _player.Uow = _uow;
         }
@@ -40,7 +43,7 @@ namespace AnkhMorporkGame
                 if(npc is ThievesGuild && ThievesGuild.Thefts == 0) // socially acceptable number of thefts has run out
                     continue;
 
-                Console.WriteLine(npc.Say(_player)); // welcoming the player
+                Console.WriteLine(npc.Say()); // welcoming the player
 
                 Console.WriteLine(!Selection() ? npc.Kill(_player) : npc.Play(_player));
 
@@ -54,7 +57,7 @@ namespace AnkhMorporkGame
         
         private static bool Selection()
         {
-            Console.WriteLine("What will you do:\n --- 1. Play\n --- 2. Skip");
+            Console.WriteLine("\nWhat will you do:\n --- 1. Play\n --- 2. Skip");
             char key;
             do
             {
@@ -85,6 +88,42 @@ namespace AnkhMorporkGame
             Console.WriteLine();
             Console.WriteLine($"These are all the rules, so you are ready to start!\nGood luck, {_player.Name}!");
             Console.ReadKey();
+        }
+        private static (NPC, int) AssassinsPaymentGetter(Player player)
+        {
+            const int Times = 3;
+            var trying = default(int);
+            var payment = default(int);
+            NPC found = null;
+
+            while (trying++ < Times)
+            {
+                Console.WriteLine($"\nEnter how much you are able to pay:   (usually between 5$ and 35$) //{Times - trying + 1} tries left//");
+
+                if (!int.TryParse(Console.ReadLine(), out payment))
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\nYou should enter the integer value");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    continue;
+                }
+
+                if (payment < 1 || payment > player.Money)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\nInvalid input sum (out of the amount of your pocket)");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    continue;
+                }
+
+                found = player.Uow.AssassinsService.Get(payment);
+
+                if (found != null) break; //there is available assassin for the work
+
+                Console.WriteLine("\nThere is no available assassin for this reward");
+            }
+
+            return (found, payment);
         }
     }
 }

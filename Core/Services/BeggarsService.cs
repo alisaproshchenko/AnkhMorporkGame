@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using AnkhMorporkGame.Entities.Models;
+using Core.Entities.Models;
 
-namespace AnkhMorporkGame.Services
+namespace Core.Services
 {
     public class BeggarsService : IService<Beggar>
     {
@@ -27,7 +27,10 @@ namespace AnkhMorporkGame.Services
                 .Select(beggar => new Beggar(
                     Convert.ToInt32(beggar.Element("Id")?.Value),
                     beggar.Element("Name")?.Value,
-                    Convert.ToDouble(beggar.Element("Fee")?.Value))));
+                    Convert.ToDouble(beggar.Element("Fee")?.Value),
+                    beggar.Element("WelcomingMessage")?.Value,
+                    beggar.Element("KillingMessage")?.Value,
+                    beggar.Element("PlayingMessage")?.Value)));
 
             return list;
         }

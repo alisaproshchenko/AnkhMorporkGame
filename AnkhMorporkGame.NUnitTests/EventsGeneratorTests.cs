@@ -1,5 +1,5 @@
 ﻿using AnkhMorporkGame.Auxiliary;
-using AnkhMorporkGame.Entities.Models;
+using Core.Entities.Models;
 using NUnit.Framework;
 
 namespace AnkhMorporkGame.NUnitTests
@@ -14,8 +14,8 @@ namespace AnkhMorporkGame.NUnitTests
             int repetitions, int expectedRepetitions)
         {
             var events = new EventsGenerator();
-            var current = new Assassin(1, false, (10, 20));
-            var previous = new ThievesGuild(6, 10);
+            var current = new Assassin(1, false, (10, 20), "welcome", "kill", "play");
+            var previous = new ThievesGuild(6, 10, "welcome", "kill", "play");
 
             events.RecalculateProbabilities(current, previous, ref repetitions);
 
@@ -30,7 +30,7 @@ namespace AnkhMorporkGame.NUnitTests
             int repetitions, int expectedRepetitions)
         {
             var events = new EventsGenerator();
-            var current = new Assassin(1, false, (10, 20));
+            var current = new Assassin(1, false, (10, 20), "welcome", "kill", "play");
             NPC previous = null;
 
             events.RecalculateProbabilities(current, previous, ref repetitions);
@@ -47,8 +47,8 @@ namespace AnkhMorporkGame.NUnitTests
             int repetitions, int expectedRepetitions)
         {
             var events = new EventsGenerator();
-            var current = new Assassin(1, false, (10, 20));
-            var previous = new Assassin(2, false, (5, 10));
+            var current = new Assassin(1, false, (10, 20), "welcome", "kill", "play");
+            var previous = new Assassin(2, false, (5, 10), "welcome", "kill", "play");
 
             events.RecalculateProbabilities(current, previous, ref repetitions);
 

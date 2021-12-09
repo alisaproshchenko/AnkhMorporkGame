@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Assassins>
+	<Assassin>
+		<Id>1</Id>
+		<Busy>true</Busy>
+		<StartRange>15</StartRange>
+		<EndRange>30</EndRange>
+		<WelcomingMessage>Oh! It seems like someone wants to kill you! I think you should make a contract with The Assassins Guild to help you</WelcomingMessage>
+		<KillingMessage>Unfortunately, the Assassins` Guild didn`t help you and you WERE KILLED</KillingMessage>
+		<PlayingMessage>Okay, we will take this situation under our control</PlayingMessage>
+	</Assassin>
+	<Assassin>
+		<Id>2</Id>
+		<Busy>false</Busy>
+		<StartRange>10</StartRange>
+		<EndRange>20</EndRange>
+		<WelcomingMessage>Oh! It seems like someone wants to kill you! I think you should make a contract with The Assassins Guild to help you</WelcomingMessage>
+		<KillingMessage>Unfortunately, the Assassins` Guild didn`t help you and you WERE KILLED</KillingMessage>
+		<PlayingMessage>Okay, we will take this situation under our control</PlayingMessage>
+	</Assassin>
+	<Assassin>
+		<Id>3</Id>
+		<Busy>true</Busy>
+		<StartRange>7</StartRange>
+		<EndRange>12</EndRange>
+		<WelcomingMessage>Oh! It seems like someone wants to kill you! I think you should make a contract with The Assassins Guild to help you</WelcomingMessage>
+		<KillingMessage>Unfortunately, the Assassins` Guild didn`t help you and you WERE KILLED</KillingMessage>
+		<PlayingMessage>Okay, we will take this situation under our control</PlayingMessage>
+	</Assassin>
+	<Assassin>
+		<Id>4</Id>
+		<Busy>false</Busy>
+		<StartRange>15</StartRange>
+		<EndRange>19</EndRange>
+		<WelcomingMessage>Oh! It seems like someone wants to kill you! I think you should make a contract with The Assassins Guild to help you</WelcomingMessage>
+		<KillingMessage>Unfortunately, the Assassins` Guild didn`t help you and you WERE KILLED</KillingMessage>
+		<PlayingMessage>Okay, we will take this situation under our control</PlayingMessage>
+	</Assassin>
+	<Assassin>
+		<Id>5</Id>
+		<Busy>false</Busy>
+		<StartRange>9</StartRange>
+		<EndRange>17</EndRange>
+		<WelcomingMessage>Oh! It seems like someone wants to kill you! I think you should make a contract with The Assassins Guild to help you</WelcomingMessage>
+		<KillingMessage>Unfortunately, the Assassins` Guild didn`t help you and you WERE KILLED</KillingMessage>
+		<PlayingMessage>Okay, we will take this situation under our control</PlayingMessage>
+	</Assassin>
+</Assassins>

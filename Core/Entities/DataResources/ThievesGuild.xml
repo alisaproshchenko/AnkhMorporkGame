@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThievesGuilds>
+	<ThievesGuild>
+		<Thefts>6</Thefts>
+		<Fee>10</Fee>
+		<WelcomingMessage>Oh no! There`s a guy from the Guild of Thieves. You have to pay 10$ to them</WelcomingMessage>
+		<KillingMessage>You definitely had to bring them those 10$..... Because the Game IS OVER for you by now</KillingMessage>
+		<PlayingMessage>- Have a nice evening!</PlayingMessage>
+	</ThievesGuild>
+</ThievesGuilds>

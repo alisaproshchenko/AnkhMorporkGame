@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Core.Player;
+using NUnit.Framework;
 
 namespace AnkhMorporkGame.NUnitTests
 {
@@ -10,7 +11,7 @@ namespace AnkhMorporkGame.NUnitTests
         [TestCase(10, 110.0)]
         public void GainMoney_WhenCalled_AddMoneyToThePlayer(double money, double expectedResult)
         {
-            var player = new Player.Player("TestName");
+            var player = new Player("TestName");
 
             player.GainMoney(money);
 
@@ -22,7 +23,7 @@ namespace AnkhMorporkGame.NUnitTests
         [TestCase(10, 90.0)]
         public void SpendMoney_WhenCalled_SubstractMoneyFromThePlayer(double money, double expectedResult)
         {
-            var player = new Player.Player("TestName");
+            var player = new Player("TestName");
 
             player.SpendMoney(money);
 

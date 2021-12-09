@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using AnkhMorporkGame.Entities.Models;
+using Core.Entities.Models;
 
-namespace AnkhMorporkGame.Services
+namespace Core.Services
 {
     public class AssassinsService : IService<Assassin>
     {
         public static List<Assassin> Assassins;
+        public delegate (NPC, int) PaymentDelegate(Player.Player player);
+        public PaymentDelegate GetPayment;
+
         public AssassinsService()
         {
             Assassins = GetAll();
@@ -27,7 +30,10 @@ namespace AnkhMorporkGame.Services
                     Convert.ToInt32(assassin.Element("Id")?.Value), 
                     Convert.ToBoolean(assassin.Element("Busy")?.Value), 
                     (Convert.ToInt32(assassin.Element("StartRange")?.Value), 
-                        Convert.ToInt32(assassin.Element("EndRange")?.Value)))));
+                        Convert.ToInt32(assassin.Element("EndRange")?.Value)),
+                    assassin.Element("WelcomingMessage")?.Value,
+                    assassin.Element("KillingMessage")?.Value,
+                    assassin.Element("PlayingMessage")?.Value)));
 
             return list;
         }

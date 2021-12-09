@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AnkhMorporkGame.Services
+namespace Core.Services
 {
     public interface IService<T>
     {

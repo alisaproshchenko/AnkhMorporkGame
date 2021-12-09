@@ -1,4 +1,4 @@
-﻿namespace AnkhMorporkGame.Entities.Models
+﻿namespace Core.Entities.Models
 {
     public abstract class NPC
     {
@@ -6,7 +6,14 @@
         protected string KillingMessage;
         protected string PlayingMessage;
 
-        public string Say(Player.Player player)
+        protected NPC(string welcomingMessage, string killingMessage, string playingMessage)
+        {
+            WelcomingMessage = welcomingMessage;
+            KillingMessage = killingMessage;
+            PlayingMessage = playingMessage;
+        }
+
+        public string Say()
         {
             return WelcomingMessage;
         }

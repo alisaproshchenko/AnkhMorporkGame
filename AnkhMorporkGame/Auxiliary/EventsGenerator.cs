@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using AnkhMorporkGame.Entities.Models;
 using System.Linq;
+using Core.Entities.Models;
 
 namespace AnkhMorporkGame.Auxiliary 
 {
